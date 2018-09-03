@@ -55,3 +55,4 @@
 		jsPluggins();
 	?>
 </body>
+</html>
