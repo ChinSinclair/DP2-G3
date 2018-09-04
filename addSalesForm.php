@@ -43,6 +43,34 @@
 			</div>
 			<div class="col-lg-8 col-md-6">
 				<div id="form-section">
+					<form action="addSalesFormItem.php" method="post">
+						<fieldset>
+							<legend>Add Sales</legend>
+							<div class="row">
+								<div class="col-12">
+									<label for="salesDate">Date: </label>
+									<input type="text" id="salesDate" name="salesDate" value="<?php echo date("d/m/y");?>" placeholder="dd/mm/yy" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<label for="salesTime">Time: </label>
+									<input type="" id="salesTime" name="salesTime" placeholder="hh:mm (eg. 23:59)" />
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<label for="salesQuantity">Number of Item: </label>
+									<input type="number" id="salesQuantity" name="salesQuantity" placeholder="eg. 5"/>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<input type="submit" value="Next" />
+								</div>
+							</div>
+						</fieldset>
+					</form>
 				</div>
 			</div>
 		</div>

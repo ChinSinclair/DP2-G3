@@ -43,6 +43,38 @@
 			</div>
 			<div class="col-lg-8 col-md-6">
 				<div id="form-section">
+					<form action="addSalesProcess.php" method="post">
+						<fieldset>
+							<legend>Add Sales</legend>
+							<?php
+								$GLOBALS["aDate"] = $_POST["salesDate"];
+								$GLOBALS["aTime"] = $_POST["salesTime"];
+								$GLOBALS["aQuantity"] = $_POST["salesQuantity"];
+
+								echo "<p>Date: " . $aDate . "</p>";
+								echo "<p>Time: " . $aTime . "</p>";
+								echo "<p>Item: " . $aQuantity . "</p>";
+							?>
+							<div class="row">
+								<div class="col-12">
+									<?php
+										for($i=1; $i<=$aQuantity; $i++){
+											echo "<div class='row'>";
+											echo "<div class='col-12'>";
+											echo "<label for='item".($i)."'>Item " . ($i) . ": ";
+											echo "<input type='text' id='item".($i)."' name='item".($i)."'/>";
+											echo "</div></div>";
+										}
+									?>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-12">
+									<input type="submit" value="Submit" />
+								</div>
+							</div>
+						</fieldset>
+					</form>
 				</div>
 			</div>
 		</div>
