@@ -16,6 +16,7 @@
 	<meta name="keywords" content="PHP" />
 	<meta name="author" content="Hanzong NG" />
 	<link href="Bootstrap_4.0/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
 	<title>Add Sales Record</title>
 </head>
 <body>
