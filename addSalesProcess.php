@@ -43,6 +43,52 @@
 			</div>
 			<div class="col-lg-8 col-md-6">
 				<div id="form-section">
+					<?php
+						$aDate = $_POST["aDate"];
+						$aTime = $_POST["aTime"];
+						$aItemQuantity = $_POST["aQuantity"];
+						$aItem = array();
+
+						for($i=0; $i<$aItemQuantity; $i++){
+							$aItem[$i] = $_POST["item".($i+1)];
+							echo "<p>" . $aItem[$i] . "</p>";
+						}
+
+						// Set the servername, username, and password
+						$serverName = "localhost";
+						$userName = "root";
+						$password = "";
+						$dbName = "php";
+
+						// Create Connection
+						$conn = mysqli_connect($serverName, $userName, $password, $dbName);
+
+						// Check Connection
+						if(!$conn){
+							die("Connection Failed: " . mysqli_connect_error());
+						}
+						echo "Successfully Connected\n";
+						echo "<br />";
+
+						$receiptIDGenerator = uniqid(mt_rand(100000,999999), true);
+
+						$sqlReceipt = "INSERT INTO Receipt (receipt_id, sold_date, sold_time) VALUES ('$receiptIDGenerator','$aDate','$aTime')";
+
+						if(mysqli_query($conn, $sqlReceipt)){
+							echo "Receipt data has been recorded<br/>";
+						} else{
+							echo "ERROR" . $sqlReceipt . "<br/>" . mysqli_error($conn);
+						}
+
+						for($j=0; $j<$aItemQuantity; $j++){
+							$sqlSales = "INSERT INTO Sales (item_id, receipt_id) VALUES ('$aItem[$j]','$receiptIDGenerator')";
+							if(mysqli_query($conn, $sqlSales)){
+								echo "Sales data has been recorded<br/>";
+							} else{
+								echo "ERROR" . $sqlSales . "<br/>" . mysqli_error($conn);
+							}
+						}
+					?>
 				</div>
 			</div>
 		</div>

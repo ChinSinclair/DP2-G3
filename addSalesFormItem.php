@@ -47,10 +47,9 @@
 						<fieldset>
 							<legend>Add Sales</legend>
 							<?php
-								$GLOBALS["aDate"] = $_POST["salesDate"];
-								$GLOBALS["aTime"] = $_POST["salesTime"];
-								$GLOBALS["aQuantity"] = $_POST["salesQuantity"];
-
+								$aDate = $_POST["salesDate"];
+								$aTime = $_POST["salesTime"];
+								$aQuantity = $_POST["salesQuantity"];
 								echo "<p>Date: " . $aDate . "</p>";
 								echo "<p>Time: " . $aTime . "</p>";
 								echo "<p>Item: " . $aQuantity . "</p>";
@@ -62,10 +61,13 @@
 											echo "<div class='row'>";
 											echo "<div class='col-12'>";
 											echo "<label for='item".($i)."'>Item " . ($i) . ": ";
-											echo "<input type='text' id='item".($i)."' name='item".($i)."'/>";
+											echo "<input required type='text' id='item".($i)."' name='item".($i)."'/>";
 											echo "</div></div>";
 										}
 									?>
+									<input hidden type="text" id="aDate" name="aDate" value="<?php echo $aDate; ?>"/>
+									<input hidden type="text" id="aTime" name="aTime" value="<?php echo $aTime; ?>"/>
+									<input hidden type="text" id="aQuantity" name="aQuantity" value="<?php echo $aQuantity; ?>"/>
 								</div>
 							</div>
 							<div class="row">

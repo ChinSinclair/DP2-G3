@@ -49,19 +49,19 @@
 							<div class="row">
 								<div class="col-12">
 									<label for="salesDate">Date: </label>
-									<input type="text" id="salesDate" name="salesDate" value="<?php echo date("d/m/y");?>" placeholder="dd/mm/yy" />
+									<input type="text" id="salesDate" name="salesDate" value="<?php echo date("d/m/y");?>" placeholder="dd/mm/yy" required />
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-12">
 									<label for="salesTime">Time: </label>
-									<input type="" id="salesTime" name="salesTime" placeholder="hh:mm (eg. 23:59)" />
+									<input type="" id="salesTime" name="salesTime" placeholder="hh:mm (eg. 23:59)" required />
 								</div>
 							</div>
 							<div class="row">
 								<div class="col-12">
 									<label for="salesQuantity">Number of Item: </label>
-									<input type="number" id="salesQuantity" name="salesQuantity" placeholder="eg. 5"/>
+									<input type="number" id="salesQuantity" name="salesQuantity" placeholder="eg. 5" required />
 								</div>
 							</div>
 							<div class="row">
