@@ -1,0 +1,62 @@
+/*
+*****
+***** Unit Code: SWE30010
+***** Unit Title: Development Project 2
+***** Author: <name>
+***** Student ID: <id>
+***** Last Modified: [DATE TIME]
+*****
+*/
+
+#navUL{
+	list-style-type: none;
+	text-align: center;
+}
+
+#navUL li{
+	display: inline;
+	padding: 0px 40px 0px 40px;
+}
+
+#navUL li a{
+	text-decoration: none;
+	color: rgb(255,255,255);
+}
+
+#navUL li a:hover{
+	color: rgb(200,200,200);
+}
+
+#navigation-bar{
+	background-color: rgb(47,47,47);
+	padding: 20px 0px 10px 0px;
+}
+
+#webpage-title{
+	background-color: rgb(159,159,159);
+	padding: 20px 0px 20px 20px;
+}
+
+#features-list{
+	background-color: rgb(159,159,159);
+	margin: 10px 0px 10px 0px;
+	border: 2px solid black;
+}
+
+#feature-list-section ul{
+	list-style-type: none;
+}
+
+#feature-list-section li a{
+	color: rgb(0,0,0);
+
+}
+
+#form-section{
+	margin: 10px 0px 10px 0px;
+	border: 2px solid black;
+}
+
+
+
+
