@@ -11,27 +11,36 @@ if(!mysqli_select_db($con, 'php'))
 {
     echo 'Database not selected';
 }
+$Quantity = $_POST['quantity'];
 
-$ItemID = uniqid (mt_rand(100000, 999999), true);
 $CategoryID = $_POST['categoryID'];
 $Quantity = $_POST['quantity'];
 $Cost = $_POST['itemCost'];
 $RetailPrice = $_POST['retailPrice'];
+$Date = htmlentities($_POST['expiryDate']);
+$ExpiryDate = date('Y-m-d', strtotime($Date));
 $SupplierID = $_POST['supplierID'];
 
-$sqlInventory = "INSERT INTO Inventory (item_id,category_id,'cost','retail_price','supplier_id','sold_statud') VALUES ('$ItemID','$CategoryID','$Cost', '$RetailPrice','$SupplierID','0')";
+$x = 0;
+while($x < $Quantity ){
+    $ItemID = uniqid (mt_rand(100000, 999999), true);
+    $sqlInventory = "INSERT INTO Inventory (item_id,category_id,cost,retail_price,exp_date,supplier_id) VALUES ('$ItemID','$CategoryID','$Cost','$RetailPrice','$ExpiryDate','$SupplierID')";
 
 
-if(!mysqli_query($con,$sqlInventory))
-{
-    echo 'ivetory Not Inserted';
+    if(!mysqli_query($con,$sqlInventory))
+    {
+        $sOutput = "<p>Inventory Not Inserted!</p>";
+        echo $sOutput;
+    }
+    else
+    {
+        $sOutput = "<p>Inventory Inserted!</p>";
+        echo $sOutput;
+    }
+    
+    $x ++;
 }
-else
-{
-    echo 'ivneotry Inserted';
-}
 
-
-header("refresh:5; url=inventory.html");
+header("refresh:5; url=inventory.php");
 
 ?>
