@@ -52,7 +52,6 @@
                             <th>Contact number</th>
                             <th>Email</th>
                             <th>Address</th>
-                            <th>Edit</th>
                         </thead>
                         
                         <tbody>
@@ -75,7 +74,6 @@
                                     <td><?php echo $row[2]?></td>
                                     <td><?php echo $row[3]?></td>
                                     <td><?php echo $row[4]?></td>
-                                    <td>edit</td>
                                 </tr>
 
                             <?php
@@ -83,6 +81,11 @@
                             ?>
                         </tbody>
                     </table>
+                    
+                    
+                    <button type="button" class="btn btn-success" onclick="window.location.href='addSuppliers.php'">Add supplier</button>
+                    
+                    <button type="button" class="btn btn-success" onclick="window.location.href='EditSuppliers.php'">Edit supplier</button>
 				</div>
 			</div>
 		</div>
