@@ -15,6 +15,8 @@
     <meta name="description" content="PHP Inc.: Page" />
     <meta name="keywords" content="PHP" />
     <meta name="author" content="Name" />
+    <link href="Bootstrap_4.0/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
     <title>Page Title</title>
 </head>
 <body>
@@ -47,8 +49,9 @@
         </div>
     </div>
 
-    <form action="compare.php" method="post">
-        <fieldset>
+    <form id="PriceDifference" action="compare.php" method="post">
+        <div class="container">
+            <div class="col-md-push-3">
             <legend>Search for price differences between Suppliers</legend>
                 <p>
                     <label for="item">Enter Item
@@ -56,7 +59,8 @@
                     </label>
                     <input type="submit" value="Search"/>
                 </p>
-        </fieldset>
+            </div>
+        </div>
     </form>
 
 

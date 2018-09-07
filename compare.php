@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="description" content="PHP Inc.: Page" />
+    <meta name="keywords" content="PHP" />
+    <meta name="author" content="Name" />
+    <link href="Bootstrap_4.0/css/bootstrap.min.css" rel="stylesheet" />
+    <title></title>
+</head>
+<body>
+
 <?php
 
 $user = 'root';
@@ -13,7 +25,10 @@ function checkquery($item)
 
     if($item != null)
     {
-        $query = "SELECT `item_id`, p.category_id, p.p_name, `cost`, `retail_price`, s.supplier_id, s.supplier_name FROM Inventory AS i JOIN Supplier AS s ON s.supplier_id = i.supplier_id JOIN ProductName AS p ON p.category_id = i.category_id WHERE p.p_name = '$item';";
+        $query = "SELECT `item_id`, p.category_id, p.p_name, `cost`, `retail_price`, s.supplier_id, s.supplier_name 
+                FROM Inventory AS i JOIN Supplier AS s ON s.supplier_id = i.supplier_id 
+                JOIN ProductName AS p ON p.category_id = i.category_id 
+                WHERE p.p_name = '$item';";
     }else
         echo "<p> Please Ensure the Item that You Enter is exist.";
 
@@ -43,7 +58,8 @@ if(!$result)
 }else {
     echo"<p> Successfully Selected Information !</p>";
 
-        echo "<table border = \"1\">\n";
+        echo "<div class = \"container\">";
+        echo "<table class=\"table table-striped table-hover\">";
         echo
         "<tr>\n " .
             "<th scope=\"col\">Item_id</th>\n " .
@@ -67,10 +83,13 @@ if(!$result)
             echo "</tr>\n ";
         }
 
-        echo "</table>\n ";
+        echo "</table> ";
+        echo"</div>";
         mysqli_free_result($result);
     }
     mysqli_close($conn);
 }
 
 ?>
+</body>
+</html>
