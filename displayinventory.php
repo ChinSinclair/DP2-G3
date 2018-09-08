@@ -1,0 +1,99 @@
+<!--
+*****
+***** Unit Code: SWE30010
+***** Unit Title: Development Project 2
+***** Author: <name>
+***** Student ID: <id>
+***** Last Modified: [DATE TIME]
+*****
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8" />
+	<meta name="description" content="PHP Inc.: Page" />
+	<meta name="keywords" content="PHP" />
+	<meta name="author" content="Name" />
+	<link href="Bootstrap_4.0/css/bootstrap.min.css" rel="stylesheet" />
+	<link href="style.css" rel="stylesheet" type="text/css" />
+	<title>Page Title</title>
+</head>
+<body>
+	<!--CODE HERE-->
+	<div id="navigation-bar">
+		<?php
+			include "include/template.php";
+			navigationBar();
+		?>
+	</div>
+
+
+	<div id="webpage-title">
+		<?php
+			webpageTitle()
+		?>
+	</div>
+
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-4 col-md-6">
+				<?php
+					featuresList();
+				?>
+			</div>
+			<div class="col-lg-8 col-md-6">
+				<div id="form-section">
+                    <table class="table table-striped table-bordered">
+                        <thead>
+                            <th>Item ID</th>
+                            <th>Category ID</th>
+                            <th>Cost</th>
+                            <th>Retail Price</th>
+                            <th>Expire Date</th>
+                            <th>Supplier ID</th>
+                            <th>Sold Status</th>
+                        </thead>
+                        
+                        <tbody>
+                            <?php
+                                $con = mysqli_connect("localhost","root","");
+                                if (!$con) {
+                                    echo "Not connected to database server";
+                                }
+                                
+                                if(!mysqli_select_db($con,"php")){
+                                    echo 'Database not selected';
+                                }
+            
+                                $data = mysqli_query($con,"SELECT * FROM Inventory");
+                                while($row = mysqli_fetch_array($data)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row[0]?></td>
+                                    <td><?php echo $row[1]?></td>
+                                    <td><?php echo $row[2]?></td>
+                                    <td><?php echo $row[3]?></td>
+                                    <td><?php echo $row[4]?></td>
+                                    <td><?php echo $row[5]?></td>
+                                    <td><?php echo $row[6]?></td>
+                                </tr>
+
+                            <?php
+                                }
+                            ?>
+                        </tbody>
+                    </table>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+
+	<!--CODE HERE-->
+	<?php
+		jsPluggins();
+	?>
+</body>
+</html>
