@@ -6,7 +6,7 @@
 	<meta name="keywords" content="PHP" />
 	<meta name="author" content="SingHong LEI" />
 	<link href="Bootstrap_4.0/css/bootstrap.min.css" rel="stylesheet" />
-	<title>Page Title</title>
+	<title>Adding status</title>
 </head>
 <body>
 	<h1>Add Supplier Status:</h1>
@@ -35,7 +35,7 @@
             }
             
             ?>
-        <button type="button" class="btn btn-default" onclick="window.location.href='insertSuppliers.php'">Back</button>
+        <button type="button" class="btn btn-default" onclick="window.location.href='addSuppliers.php'">Back</button>
     <?php
             
 		} else{

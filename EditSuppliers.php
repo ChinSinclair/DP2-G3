@@ -45,7 +45,7 @@
 			<div class="col-lg-8 col-md-6">
 				<div id="form-section">
                     
-                    <form action="" method="post" novalidate>
+                    <form action="supplierEditStatus.php" method="post" novalidate>
                     
                     <div class="row">
                         <div class="col-md-12 col-lg-12 text right">
