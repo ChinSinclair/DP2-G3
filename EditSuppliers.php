@@ -54,7 +54,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-12 col-lg-12">
-                            <input type="text" id="supplierId" name="supplierId"  placeholder="Please key in the supplier ID" required/>
+                            <input type="text" id="supplierId" name="supplierId"  placeholder="Please key in the supplier ID" style="width:100%" required/>
                         </div>
                     </div>
                     

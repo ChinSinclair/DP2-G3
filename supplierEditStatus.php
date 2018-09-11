@@ -61,7 +61,7 @@
             }
             
             if($flag == 0){
-                echo "<h2>Edit Success</h2>";
+                
                 
                 $host = "localhost";
                 $dbUsername = "root";
@@ -78,6 +78,21 @@
                     echo 'Database not selected';
                 }
                 
+                $checkRow = mysqli_query($con,"SELECT * FROM Supplier WHERE supplier_id='$supplierId'");
+                
+                if(mysqli_num_rows($checkRow) == 0){
+                    echo "<h2>Databse has no such supplier id record.</h2>";
+                ?>    
+                    <button type="button" class="btn btn-default" onclick="window.location.href='EditSuppliers.php'">Back</button>
+    
+                <?php
+                }
+                
+                else{
+                
+                
+                echo "<h2>Edit Success</h2>";
+                    
                 if($sName != NULL){
                     $sqlProduct = "UPDATE Supplier SET supplier_name='$sName' WHERE supplier_id='$supplierId'";
             
@@ -128,6 +143,7 @@
                 <button type="button" class="btn btn-default" onclick="window.location.href='addSuppliers.php'">Back to home page</button>
                 <?php
                 
+            }
             }
             
            
