@@ -13,10 +13,10 @@
 		echo "
 			<navigation>
 				<ul>
-					<li>HOME</li>
-					<li>SETTING</li>
-					<li>TECHNICAL SUPPORT</li>
-					<li>ABOUT US</li>
+					<li><a href='#'>HOME</a></li>
+					<li><a href='#'>SETTING</a></li>
+					<li><a href='techsupport.php'>TECHNICAL SUPPORT</li>
+					<li><a href='#'>ABOUT US</a></li>
 				</ul>
 			</navigation>
 		";
@@ -42,11 +42,11 @@
 						<div class="col-12">
 							<div id="feature-list-section">
 								<ul>
-									<li>Add Sales</li>
-									<li>Add Inventory</li>
-									<li>Display Suppliers</li>
-									<li>Generate Report</li>
-									<li>Others...</li>
+									<li><a href="addSalesForm.php">Add Sales</li>
+									<li><a href="inventory.php">Add Inventory</li>
+									<li><a href="SupplierDetails.php">Display Suppliers</li>
+									<li><a href="#">Generate Report</a></li>
+									<li><a href="#">Others...</a></li>
 								</ul>
 							</div>
 						</div>
