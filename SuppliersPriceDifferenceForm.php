@@ -22,52 +22,53 @@
 <body>
     <!--CODE HERE-->
     <div id="navigation-bar">
-        <?php
-            include "include/template.php";
-            navigationBar();
-        ?>
+	  <?php
+		include "include/template.php";
+		navigationBar();
+	  ?>
     </div>
 
 
     <div id="webpage-title">
-        <?php
-            webpageTitle()
-        ?>
+	  <?php
+		webpageTitle()
+	  ?>
     </div>
 
     <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <?php
-                    featuresList();
-                ?>
-            </div>
-            <div class="col-lg-8 col-md-6">
-                <div id="form-section">
-                </div>
-            </div>
-        </div>
+	  <div class="row">
+		<div class="col-lg-4 col-md-6">
+		    <?php
+			  featuresList();
+		    ?>
+		</div>
+		<div class="col-lg-8 col-md-6">
+		    <div id="form-section">
+		    <form action="SuppliersPriceDifferenceProcess.php" method="post">
+	  <div class="container">
+		<div class="col-md-push-3">
+		<legend>Search for price differences between Suppliers</legend>
+		    <p>
+			  <label for="item">Enter Item
+			  <input type="text" id="item" name="item" required />
+			  </label>
+			  <input type="submit" value="Search"/>
+		    </p>
+		</div>
+	  </div>
+    </form>
+		    </div>
+		</div>
+	  </div>
     </div>
 
-    <form id="PriceDifference" action="SuppliersPriceDifferenceProcess.php" method="post">
-        <div class="container">
-            <div class="col-md-push-3">
-            <legend>Search for price differences between Suppliers</legend>
-                <p>
-                    <label for="item">Enter Item
-                    <input type="text" id="item" name="item" required />
-                    </label>
-                    <input type="submit" value="Search"/>
-                </p>
-            </div>
-        </div>
-    </form>
+
 
 
 
     <!--CODE HERE-->
     <?php
-        jsPluggins();
+	  jsPluggins();
     ?>
 </body>
 </html>
