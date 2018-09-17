@@ -82,6 +82,7 @@
 						}
 
 						for($j=0; $j<$aItemQuantity; $j++){
+							$receiptIDGenerator = uniqid(mt_rand(100000,999999), true);
 							$sqlSales = "INSERT INTO Sales (item_id, receipt_id) VALUES ('$aItem[$j]','$receiptIDGenerator')";
 							if(mysqli_query($conn, $sqlSales)){
 								echo "Sales data has been recorded<br/>";
