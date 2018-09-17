@@ -12,7 +12,7 @@
 	function navigationBar(){
 		echo "
 			<navigation>
-				<ul>
+				<ul id='navUL'>
 					<li><a href='#'>HOME</a></li>
 					<li><a href='#'>SETTING</a></li>
 					<li><a href='techsupport.php'>TECHNICAL SUPPORT</li>
