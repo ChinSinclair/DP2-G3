@@ -49,7 +49,7 @@
         </div>
     </div>
 
-    <form id="PriceDifference" action="compare.php" method="post">
+    <form id="PriceDifference" action="SuppliersPriceDifferenceProcess.php" method="post">
         <div class="container">
             <div class="col-md-push-3">
             <legend>Search for price differences between Suppliers</legend>
