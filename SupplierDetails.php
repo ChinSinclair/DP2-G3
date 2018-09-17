@@ -16,6 +16,7 @@
 	<meta name="keywords" content="PHP" />
 	<meta name="author" content="Sing Hong LEI" />
 	<link href="Bootstrap_4.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
 	<title>Suppliers' Details</title>
 </head>
 <body>

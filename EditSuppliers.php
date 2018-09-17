@@ -2,9 +2,9 @@
 *****
 ***** Unit Code: SWE30010
 ***** Unit Title: Development Project 2
-***** Author: <name>
-***** Student ID: <id>
-***** Last Modified: [DATE TIME]
+***** Author: Sing Hong LEI
+***** Student ID: 100084376
+***** Last Modified: 18-9-2018
 *****
 -->
 
@@ -16,6 +16,7 @@
 	<meta name="keywords" content="PHP" />
 	<meta name="author" content="Name" />
 	<link href="Bootstrap_4.0/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" type="text/css" />
 	<title>Page Title</title>
 </head>
 <body>
