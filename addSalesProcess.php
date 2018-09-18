@@ -84,6 +84,8 @@
 						for($j=0; $j<$aItemQuantity; $j++){
 
 							$sqlSales = "INSERT INTO Sales (item_id, receipt_id) VALUES ('$aItem[$j]','$receiptIDGenerator')";
+							$sqlStatus = "UPDATE Inventory SET sold_status = '1' WHERE item_id = $aItem[$j]";
+							mysqli_query($conn, $sqlStatus);
 							if(mysqli_query($conn, $sqlSales)){
 								echo "Sales data has been recorded<br/>";
 							} else{
