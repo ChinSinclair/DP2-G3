@@ -4,7 +4,7 @@
 ***** Unit Title: Development Project 2
 ***** Author: Han Zong NG
 ***** Student ID: 100084651
-***** Last Modified: 03 September 2018 [Time: (+GMT 10:00)]
+***** Last Modified: 26 September 2018 [Time: (+GMT 10:00)]
 *****
 -->
 
@@ -17,7 +17,7 @@
 	<meta name="author" content="Hanzong NG" />
 	<link href="Bootstrap_4.0/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="style.css" rel="stylesheet" type="text/css" />
-	<title>Add Sales Record</title>
+	<title>Edit Sales Record</title>
 </head>
 <body>
 	<!--CODE HERE-->
@@ -68,7 +68,7 @@
 
 
 						if($aTime != null && $aDate != null){
-							$sqlEdit = "UPDATE Receipt SET sold_time = '$aTime' AND sold_date = $aDate WHERE receipt_id = $aReceipt";
+							$sqlEdit = "UPDATE Receipt SET sold_time = '$aTime', sold_date = '$aDate' WHERE receipt_id = $aReceipt";
 
 							if(mysqli_query($conn, $sqlEdit)){
 								echo "Receipt data has been updated<br/>";
