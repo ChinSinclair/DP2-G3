@@ -50,7 +50,7 @@
 							<div class="row">
 								<div class="col-12">
 									<label for="salesDate">Date: </label>
-									<input type="text" id="salesDate" name="salesDate" value="<?php echo date("d/m/y");?>" placeholder="dd/mm/yy" required />
+									<input type="text" id="salesDate" name="salesDate" value="<?php echo date("y/m/d");?>" placeholder="yy/mm/dd" required />
 								</div>
 							</div>
 							<div class="row">
