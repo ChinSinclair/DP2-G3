@@ -72,10 +72,51 @@
                 $checkQue = mysqli_query($con,"SELECT * FROM ProductName WHERE category_id = '$productID'");
                 
                 if(mysqli_num_rows($checkQue) > 0){
-                   echo "<h1>Prediction item selected</h1>";
+                    
+                    $productName_query = "SELECT p_name FROM ProductName WHERE category_id = '$productID'";
+                    $productName = mysqli_query($con,$productName_query);
+                    $nameString = $productName->fetch_assoc();
+                    
+                    echo "<h1> Product '".$nameString["p_name"]."' has been selected to predict.</h1>";
+                    
+                    $soldItem_Query = "SELECT Receipt.sold_date, Inventory.item_id, Inventory.retail_price FROM ((Inventory INNER JOIN Sales ON Inventory.item_id = Sales.item_id) INNER JOIN Receipt  ON Receipt.receipt_id = Sales.receipt_id) WHERE Inventory.category_id = '$productID' AND Inventory.sold_status = 1";
+                    
+                    $soldItem = mysqli_query($con,$soldItem_Query);
+                    $soldMonthCount = array();
+                    $totalSales =0;
+                    
+                    while($row = mysqli_fetch_object($soldItem)){
+                        $totalSales += $row->retail_price;
+                    }
+                    
+                    foreach($soldItem as $val){
+                        if(!in_array($val,$soldMonthCount)){
+                            array_push($soldMonthCount,$val);
+                        }
+                    }
+                    
+                    $averageSales = bcdiv($totalSales, sizeof($soldMonthCount), 2);
+                    //$averageSales = $totalSales / sizeof($soldMonthCount);
+                    $scenarioA = bcdiv(($averageSales * 120), 100, 2);
+                    $scenarioB = $averageSales;
+                    $scenarioC = bcdiv(($averageSales * 90), 100, 2);
+                    
+                    $prediction = bcdiv(($scenarioA + ($scenarioB*4) + $scenarioC),6,2);
+                    ?>
+                    <h2>Forcast Sales: $<?php echo $prediction?></h2>
+                    <h3>Previous average sales: $<?php echo $averageSales?></h3>
+                    
+                    <?php
+                    
                 }
                 else{
-                    echo "<h1>Cant found this id in database!</h1>"; 
+                    echo "<h1>Cant found this ID in database!</h1>"; 
+                    echo "<p>Please insert Product ID again</p>";
+                    ?>
+                    <div class="col-md-2 offset-md-10">
+                        <button type="button" class="btn btn-default" onclick="window.location.href='PredictSingle1.php'">Back</button>
+                    </div>
+                    <?php
                 }
             }
             
