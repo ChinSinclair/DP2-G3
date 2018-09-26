@@ -25,10 +25,11 @@ function checkquery($item)
 
     if($item != null)
     {
-        $query = "SELECT `item_id`, p.category_id, p.p_name, `cost`, `retail_price`, s.supplier_id, s.supplier_name 
+        $query = "SELECT p.category_id, p.p_name, `cost`, `retail_price`, s.supplier_id, s.supplier_name 
                 FROM Inventory AS i JOIN Supplier AS s ON s.supplier_id = i.supplier_id 
                 JOIN ProductName AS p ON p.category_id = i.category_id 
-                WHERE p.p_name = '$item';";
+                WHERE p.p_name = '$item'
+                Group BY s.supplier_name;";
     }else
         echo "<p> Please Ensure the Item that You Enter is exist.";
 
@@ -62,7 +63,6 @@ if(!$result)
         echo "<table class=\"table table-striped table-hover\">";
         echo
         "<tr>\n " .
-            "<th scope=\"col\">Item_id</th>\n " .
             "<th scope=\"col\">Category_id</th>\n " .
             "<th scope=\"col\">Product_name</th>\n " .
             "<th scope=\"col\">Cost</th>\n " .
@@ -73,7 +73,6 @@ if(!$result)
 
         while ($row = mysqli_fetch_assoc($result)) {
             echo "<tr>\n ";
-            echo "<td>", $row["item_id"], "</td>\n ";
             echo "<td>", $row["category_id"], "</td>\n ";
             echo "<td>", $row["p_name"], "</td>\n ";
             echo "<td>", $row["cost"], "</td>\n ";
