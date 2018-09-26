@@ -3,7 +3,7 @@ USE php;
 
 CREATE TABLE Receipt
 (
-receipt_id  VARCHAR(10) not null,
+receipt_id  VARCHAR(10) not null AUTO_INCREMENT,
 sold_time TIME not null,
 sold_date DATE not null,
 
@@ -12,7 +12,7 @@ PRIMARY KEY(receipt_id)
 
 CREATE TABLE Supplier
 (
-supplier_id VARCHAR(5) not null,
+supplier_id VARCHAR(5) not null AUTO_INCREMENT,
 supplier_name VARCHAR(20) not null,
 phone_num VARCHAR(12) not null,
 email_add VARCHAR(20) not null,
@@ -31,7 +31,7 @@ PRIMARY KEY(category_id)
 
 CREATE TABLE Inventory
 (
-item_id VARCHAR(15) not null,
+item_id VARCHAR(15) not null AUTO_INCREMENT,
 category_id VARCHAR(5) not null,
 cost VARCHAR(5) not null,
 retail_price VARCHAR(5) not null,
