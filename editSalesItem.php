@@ -62,7 +62,8 @@
 						<input hidden type="text" id="aReceipt" name="aReceipt" value="<?php echo $aReceipt; ?>"/>
 						<br />
 						<br />
-						<button type="submit" class="btn btn-success">Edit</button>
+						<p>Note: To delete record, leave blank for both input field</p>
+						<button type="submit" class="btn btn-success">Confirm</button>
 					</form>
 				</div>
 			</div>
