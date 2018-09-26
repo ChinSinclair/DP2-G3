@@ -35,6 +35,7 @@
             </div>
             <div class="col-lg-8 col-md-6">
                 <div id="form-section">
+                    <div class="table-responsive">
                     <!-- Generate Monthly Sales Report -->
                     <?php
                         if (!isset($_POST["year"]) && !isset($_POST["month"])) {
@@ -52,7 +53,7 @@
                             $database = "php";          // name of database in phpMyAdmin
 
                             // connect to mysql database, localhost phpMyAdmin in this case
-                            $connection = new mysqli($host, $username, $password, $database);
+                            $connection = mysqli_connect($host, $username, $password, $database);
 
                             if ($connection->connect_error) {
                                 // if connection to database failed
@@ -98,6 +99,7 @@
                                 <thead>
                                     <th>Category ID</th>
                                     <th>Item ID</th>
+                                    <th>Cost</th>
                                     <th>Retail </th>
                                     <th>Receipt ID</th>
                                     <th>Sold Time</th>
@@ -116,6 +118,7 @@
                                         <tr>
                                             <td>{$row['category_id']}</td>
                                             <td>{$row['item_id']}</td>
+                                            <td>{$row['cost']}</td>
                                             <td>{$row['retail_price']}</td>
                                             <td>{$row['receipt_id']}</td>
                                             <td>{$row['sold_time']}</td>
@@ -174,6 +177,7 @@
                             mysqli_close($connection);
                         }
                     ?>
+                </div>
                 </div>
             </div>
         </div>
