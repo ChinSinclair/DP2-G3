@@ -71,19 +71,26 @@
 						echo "Successfully Connected\n";
 						echo "<br />";
 
-						$receiptIDGenerator = uniqid(mt_rand(100000,999999), true);
-
-						$sqlReceipt = "INSERT INTO Receipt (receipt_id, sold_date, sold_time) VALUES ('$receiptIDGenerator','$aDate','$aTime')";
+						$sqlReceipt = "INSERT INTO Receipt (sold_date, sold_time) VALUES ('$aDate','$aTime')";
+						$sqlReID = "SELECT receipt_id FROM Receipt ORDER BY receipt_id DESC LIMIT 1";
+						$currentRece = "";
 
 						if(mysqli_query($conn, $sqlReceipt)){
 							echo "Receipt data has been recorded<br/>";
+							$currentRe = mysqli_query($conn, $sqlReID);
+
+							while ($row = mysqli_fetch_object($currentRe)){
+								//echo $row->receipt_id;
+								$currentRece = $row->receipt_id;
+							}
+
 						} else{
 							echo "ERROR" . $sqlReceipt . "<br/>" . mysqli_error($conn);
 						}
 
 						for($j=0; $j<$aItemQuantity; $j++){
 
-							$sqlSales = "INSERT INTO Sales (item_id, receipt_id) VALUES ('$aItem[$j]','$receiptIDGenerator')";
+							$sqlSales = "INSERT INTO Sales (item_id, receipt_id) VALUES ('$aItem[$j]','$currentRece')";
 							$sqlStatus = "UPDATE Inventory SET sold_status = '1' WHERE item_id = $aItem[$j]";
 							mysqli_query($conn, $sqlStatus);
 							if(mysqli_query($conn, $sqlSales)){
