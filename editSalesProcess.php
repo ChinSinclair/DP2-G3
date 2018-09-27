@@ -76,7 +76,7 @@
 								echo "ERROR " . $sqlEdit . "<br/>" . mysqli_error($conn);
 							}
 						} else if($aTime == null && $aDate == null){
-							$sqlDltSales = "DELETE FROM sales WHERE item_id = $aItem AND receipt_id = $aReceipt";
+							$sqlDltSales = "DELETE FROM Sales WHERE item_id = $aItem AND receipt_id = $aReceipt";
 							$sqlUdtInv = "UPDATE Inventory SET sold_status = '0' WHERE item_id = $aItem";
 							if(mysqli_query($conn, $sqlDltSales)){
 								echo "Sales record has been deleted<br/>";
