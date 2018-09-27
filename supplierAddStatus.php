@@ -118,9 +118,8 @@
                     echo 'Database not selected';
                 }
                 
-                 $SupplierIDgenerate  = uniqid (mt_rand(100000, 999999), true);
             
-                $sqlProduct = "INSERT INTO Supplier (supplier_id,supplier_name,phone_num,email_add,address_phy) VALUES ('$SupplierIDgenerate','$sName','$sPhone','$sEmail','$sAddress')";
+                $sqlProduct = "INSERT INTO Supplier (supplier_name,phone_num,email_add,address_phy) VALUES ('$sName','$sPhone','$sEmail','$sAddress')";
             
                 if(!mysqli_query($con,$sqlProduct)){
                     echo '<p>Data Not Inserted</p>';
