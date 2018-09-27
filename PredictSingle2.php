@@ -87,13 +87,11 @@
                     
                     while($row = mysqli_fetch_object($soldItem)){
                         $totalSales += $row->retail_price;
-                    }
-                    
-                    foreach($soldItem as $val){
-                        if(!in_array($val,$soldMonthCount)){
-                            array_push($soldMonthCount,$val);
+                        if(!in_array($row->sold_date,$soldMonthCount)){
+                            array_push($soldMonthCount,$row->sold_date);
                         }
                     }
+                    
                     
                     error_reporting(E_ERROR | E_PARSE);    
                     $averageSales = bcdiv($totalSales, sizeof($soldMonthCount), 2);
