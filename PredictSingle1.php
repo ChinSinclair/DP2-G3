@@ -4,7 +4,7 @@
 ***** Unit Title: Development Project 2
 ***** Author: Sing Hong LEI
 ***** Student ID: 100084376
-***** Last Modified: 25 September 2018
+***** Last Modified: 27 September 2018
 *****
 -->
 
@@ -17,7 +17,7 @@
 	<meta name="author" content="SingHong LEI" />
 	<link href="Bootstrap_4.0/css/bootstrap.min.css" rel="stylesheet" />
 	<link href="style.css" rel="stylesheet" type="text/css" />
-	<title>Predict Single Item: product id</title>
+	<title>Predict Single Item</title>
 </head>
 <body>
 	<!--CODE HERE-->
