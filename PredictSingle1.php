@@ -67,6 +67,39 @@
 							</div>
 						</fieldset>
 					</form>
+                    <br/>
+                    <h2>Product Data</h2>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Product Name</th>
+                                <th>Product ID</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php
+                                $con = mysqli_connect("localhost","root","");
+                                if (!$con) {
+                                    echo "Not connected to database server";
+                                }
+                                
+                                if(!mysqli_select_db($con,"php")){
+                                    echo 'Database not selected';
+                                }
+            
+                                $data = mysqli_query($con,"SELECT * FROM ProductName");
+                                while($row = mysqli_fetch_array($data)) {
+                            ?>
+                                <tr>
+                                    <td><?php echo $row[1]?></td>
+                                    <td><?php echo $row[0]?></td>
+                                </tr>
+
+                            <?php
+                                }
+                            ?>
+                        </tbody>
+                    </table>
 				</div>
 			</div>
 		</div>
