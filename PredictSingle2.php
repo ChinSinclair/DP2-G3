@@ -87,13 +87,11 @@
                     
                     while($row = mysqli_fetch_object($soldItem)){
                         $totalSales += $row->retail_price;
-                    }
-                    
-                    foreach($soldItem as $val){
-                        if(!in_array($val,$soldMonthCount)){
-                            array_push($soldMonthCount,$val);
+                        if(!in_array($row->sold_date,$soldMonthCount)){
+                            array_push($soldMonthCount,$row->sold_date);
                         }
                     }
+                    
                     
                     error_reporting(E_ERROR | E_PARSE);    
                     $averageSales = bcdiv($totalSales, sizeof($soldMonthCount), 2);
@@ -116,18 +114,27 @@
                             <td>$<?php echo $averageSales?></td>
                         </tr>
                     </table>
+                    <div class="col-md-2 offset-md-8">
+                    <button type="button" class="btn btn-success" onclick="window.location.href='PredictSingle1.php'">Predict Another Product</button>
+                    </div>
+                    
                     <?php
                     }
                     else{
                         echo"<h3>There has no historical data! There are no prediction.</h3>";
+                        ?>
+                    <div class="col-md-2 offset-md-9">
+                        <button type="button" class="btn btn-warning" onclick="window.location.href='PredictSingle1.php'">Predict Again</button>
+                    </div>
+                        <?php
                     }
                 }
                 else{
                     echo "<h1>Cant found this ID in database!</h1>"; 
                     echo "<p>Please insert Product ID again</p>";
                     ?>
-                    <div class="col-md-2 offset-md-10">
-                        <button type="button" class="btn btn-default" onclick="window.location.href='PredictSingle1.php'">Back</button>
+                    <div class="col-md-2 offset-md-9">
+                        <button type="button" class="btn btn-warning" onclick="window.location.href='PredictSingle1.php'">Back</button>
                     </div>
                     <?php
                 }
