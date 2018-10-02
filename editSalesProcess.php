@@ -89,6 +89,8 @@
 							} else{
 								echo "ERROR " . $sqlUdtInv . "<br/>" . mysqli_error($conn);
 							}
+						} else {
+							echo "Action Reverted! Please fill up the form in full <br/>OR<br/>Empty all field to Delete!";
 						}
 					?>
 				</div>
