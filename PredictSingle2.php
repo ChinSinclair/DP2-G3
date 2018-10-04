@@ -73,11 +73,11 @@
                 
                 if(mysqli_num_rows($checkQue) > 0){
                     
-                    $productName_query = "SELECT p_name FROM ProductName WHERE category_id = '$productID'";
+                    $productName_query = "SELECT p_name, category_id FROM ProductName WHERE category_id = '$productID'";
                     $productName = mysqli_query($con,$productName_query);
                     $nameString = $productName->fetch_assoc();
                     
-                    echo "<h1> Product <u>'".$nameString["p_name"]."'</u> has been selected to predict.</h1>";
+                    echo "<h1> Product <u>'".$nameString["p_name"]."(".$nameString["category_id"].")'</u> has been selected to predict.</h1>";
                     
                     $soldItem_Query = "SELECT Receipt.sold_date, Inventory.item_id, Inventory.retail_price FROM ((Inventory INNER JOIN Sales ON Inventory.item_id = Sales.item_id) INNER JOIN Receipt  ON Receipt.receipt_id = Sales.receipt_id) WHERE Inventory.category_id = '$productID' AND Inventory.sold_status = 1";
                     
