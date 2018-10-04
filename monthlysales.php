@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,7 +10,7 @@
     <meta name="author" content="Name" />
     <link href="Bootstrap_4.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" type="text/css" />
-    <title>Page Title</title>
+    <title>Monthly Sales</title>
 </head>
 <body>
     <!--CODE HERE-->
@@ -46,6 +49,9 @@
                             // form data exists, obtain data from form through post method
                             $year = $_POST["year"];
                             $month = $_POST["month"];
+
+                            $_SESSION["year"] = $year;
+                            $_SESSION["month"] = $month;
 
                             $username = "root";         // username to database admin
                             $password = "";             // password to database admin
@@ -92,6 +98,13 @@
                     <?php
                         // if query is valid and row count is more than 0, which means data exists
                         if ($result1 && ($rowcount1 > 0)) {
+                            echo "
+                            <form action='export.php' method='post'>
+                                <p>
+                                    <input type='submit' name='export' value='Export CSV' class='btn btn-success' />
+                                </p>
+                            </form>
+                            ";
                             // First table for monthly sales data
                             // print table header
                             echo "
@@ -172,12 +185,13 @@
                             else {
                                 // if data does not exist in database
                                 echo "No data in database";
+                                return 0;
                             }
                             // close database connection
                             mysqli_close($connection);
                         }
                     ?>
-                </div>
+                    </div>
                 </div>
             </div>
         </div>
