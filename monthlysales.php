@@ -10,6 +10,8 @@
     <meta name="author" content="Name" />
     <link href="Bootstrap_4.0/css/bootstrap.min.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" type="text/css" />
+    <script   src="https://code.jquery.com/jquery-3.3.1.min.js"   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="   crossorigin="anonymous"></script>
+    <script src="https://code.highcharts.com/highcharts.js"></script>
     <title>Monthly Sales</title>
 </head>
 <body>
@@ -191,6 +193,44 @@
                             mysqli_close($connection);
                         }
                     ?>
+                        <!-- Generate Column Graph on Monthly Sales Report -->
+                        <div id="graph" style="width:100%; height:400px;"></div>
+
+                        <!-- Script to generate graph -->
+                        <script type="text/javascript">
+                            $(document).ready(function() {
+                                var options = {
+                                    // generate type of graph
+                                    chart: {
+                                        renderTo: 'graph',
+                                        type: 'column',
+                                        text: 'Monthly Sales Report'
+                                    },
+                                    // title of graph
+                                    title: {
+                                        text: 'Monthly Sales Report'
+                                    },
+                                    // title of x-axis
+                                    xAxis: {
+                                        title: {
+                                            text: 'Category ID'
+                                        }
+                                    },
+                                    // title of y-axis
+                                    yAxis: {
+                                        title: {
+                                            text: 'Profit'
+                                        }
+                                    },
+                                    series: [{}]
+                                };
+                                // Get data from data.php file
+                                $.getJSON('graph_data.php', function(data) {
+                                    options.series[0].data = data;
+                                    var chart = new Highcharts.chart(options);
+                                });
+                            });
+                        </script>
                     </div>
                 </div>
             </div>
