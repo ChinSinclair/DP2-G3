@@ -87,6 +87,7 @@
                             }
                         }
                         
+                        error_reporting(E_ERROR | E_PARSE);
                          $averageSales = bcdiv($totalSales, sizeof($soldMonthCount), 2);
                     
                         $scenarioA = bcdiv(($averageSales * 120), 100, 2);
@@ -94,6 +95,7 @@
                         $scenarioC = bcdiv(($averageSales * 90), 100, 2);
                     
                         $prediction = bcdiv(($scenarioA + ($scenarioB*4) + $scenarioC),6,2);
+                        if($averageSales != 0){
                         ?>
                     
                         <table border="1">
@@ -108,7 +110,21 @@
                             </tr>
                         </table>
                     
+                    <div class="col-md-2 offset-md-9">
+                        <button type="button" class="btn btn-success" onclick="window.location.href='PredictGroup1.php'">Predict Again</button>
+                    </div>
+                    
                         <?php
+                        }
+                        else{
+                            echo"<h3>There has no historical data! There are no prediction.</h3>";
+                            ?>
+                                <div class="col-md-2 offset-md-9">
+                                    <button type="button" class="btn btn-warning" onclick="window.location.href='PredictGroup1.php'">Predict Again</button>
+                                </div>
+                    
+                            <?php
+                        }
                         
                     }
                     else if($typeCode == 2){
@@ -152,12 +168,31 @@
                             </tr>
                         </table>
                     
+                    <div class="col-md-2 offset-md-9">
+                        <button type="button" class="btn btn-success" onclick="window.location.href='PredictGroup1.php'">Predict Again</button>
+                    </div>
+                    
                         <?php
                         }
-                        else{echo"<h3>There has no historical data! There are no prediction.</h3>";}
+                        else{
+                            echo"<h3>There has no historical data! There are no prediction.</h3>";
+                            ?>
+                                <div class="col-md-2 offset-md-9">
+                                    <button type="button" class="btn btn-warning" onclick="window.location.href='PredictGroup1.php'">Predict Again</button>
+                                </div>
+                    
+                            <?php
+                            }
                     }
                 }
-                else{echo"<h1>There is no such product type, please key in again!</h1>";}
+                else{
+                    echo"<h1>There is no such product type, please key in again!</h1>";
+                    ?>
+                        <div class="col-md-2 offset-md-9">
+                        <button type="button" class="btn btn-warning" onclick="window.location.href='PredictGroup1.php'">Back</button>
+                    </div>
+                    <?php
+                }
                 
                 
             }

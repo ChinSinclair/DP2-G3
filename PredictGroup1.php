@@ -67,6 +67,26 @@
 							</div>
 						</fieldset>
 					</form>
+                    <br/>
+                    <h2>Product Group</h2>
+                    <table border="1">
+                        <thead>
+                            <tr>
+                                <th>Group</th>
+                                <th>Code</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Fruit</td>
+                                <td>1</td>
+                            </tr>
+                            <tr>
+                                <td>Coffee</td>
+                                <td>2</td>
+                            </tr>
+                        </tbody>
+                    </table>
 				</div>
 			</div>
 		</div>
