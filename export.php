@@ -1,8 +1,8 @@
 <?php
-    if (isset($_POST["year"]) && isset($_POST["month"])) {
-        // form data exists, obtain data from form through post method
-        $year = $_POST["year"];
-        $month = $_POST["month"];
+    session_start();
+
+        $year = $_SESSION["year"];
+        $month = $_SESSION["month"];
 
         $username = "root";         // username to database admin
         $password = "";             // password to database admin
@@ -86,9 +86,4 @@
                 window.location.href='monthlysalesUI.php';
             </script>";
         }
-    }
-    else {
-        // print error message
-        echo "Please enter year and select month to generate CSV report";
-    }
 ?>
