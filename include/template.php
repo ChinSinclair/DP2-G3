@@ -16,7 +16,7 @@
 					<li><a href='#'>HOME</a></li>
 					<li><a href='#'>SETTING</a></li>
 					<li><a href='techsupport.php'>TECHNICAL SUPPORT</li>
-					<li><a href='#'>ABOUT US</a></li>
+					<li><a href='aboutUs.php'>ABOUT US</a></li>
 				</ul>
 			</navigation>
 		";
