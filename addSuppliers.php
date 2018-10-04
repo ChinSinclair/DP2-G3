@@ -109,7 +109,7 @@
                         <div class="row">
                             <div class="col-md-12 text-right">
                                 <button type="submit" class="btn btn-success">Add</button>
-                                <button type="button" class="btn btn-default" >Cancel</button>
+                                <button type="button" class="btn btn-default" onclick="window.location.href='index.php'">Cancel</button>
                             </div>
                         </div>
                         <!---->

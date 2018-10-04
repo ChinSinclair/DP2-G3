@@ -111,12 +111,26 @@
                             </div>
                             
                             <div class="col-md-9 col-lg-9">
-                                <input type="text" id="supplierAddress" name="supplierAddress" placeholder="Address" required>
+                                <input type="text" id="supplierAddress" name="supplierAddress" placeholder="Address" required/>
                             </div>
                         </div>
                         <!---->
                         <!---->
                     
+                        <!---->
+                        <!--row for address-->
+                        <div class="row">
+                            <div class="col-md-3 col-lg-3 text-right">
+                                <label for="dltSupplier">Delete:</label>
+                            </div>
+                            
+                            <div class="col-md-9 col-lg-9">
+                                <input type="checkbox" id="dltSupplier" name="dltSupplier" value="delete"/>
+                            </div>
+                        </div>
+                        <!---->
+                        <!---->
+                        
                         <!---->
                         <!--row for button-->
                         <div class="row">

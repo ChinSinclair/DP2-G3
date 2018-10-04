@@ -131,7 +131,7 @@
                  ?>
                 <button type="button" class="btn btn-success" onclick="window.location.href='addSuppliers.php'">Add again</button>
     
-                <button type="button" class="btn btn-default" onclick="window.location.href='addSuppliers.php'">Back to home page</button>
+                <button type="button" class="btn btn-default" onclick="window.location.href='index.php'">Back to home page</button>
                 <?php
                 
             }

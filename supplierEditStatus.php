@@ -61,7 +61,7 @@
                         <?php
                         }
     
-		              else if($_POST["supplierName"] == null && $_POST["supplierPhoneNum"] == null && $_POST["supplierEmail"] == null && $_POST["supplierAddress"] == null){
+		              else if($_POST["supplierName"] == null && $_POST["supplierPhoneNum"] == null && $_POST["supplierEmail"] == null && $_POST["supplierAddress"] == null && !(isset($_POST['dltSupplier']))){
                     echo "<h2>Please fill in at least 1 field to edit information.</h2>";
             
                     ?>
@@ -84,7 +84,7 @@
                               $flag++;
                           }
             
-                          if((!preg_match("/^[A-Za-z0-9,. ]{5,70}$/",$sAddress)) &&($_POST["supplierEmail"] != null)){
+                          if((!preg_match("/^[A-Za-z0-9,. ]{5,70}$/",$sAddress)) &&($_POST["supplierAddress"] != null)){
                               echo "<p>Address: format is invalid, make sure the length in 5 - 70 characters.</p>";
                               $flag++;
                           }
@@ -171,11 +171,22 @@
                         echo '<p>Address Edited</p>';
                     }
                 }
+                      
+                if (isset($_POST['dltSupplier'])){
+                    $sqlProduct = "DELETE FROM Supplier WHERE supplier_id='$supplierId'";
+                    if(mysqli_query($con,$sqlProduct)){
+                        echo '<p>Supplier has been deleted</p>';
+                    }
+                    else{
+                        echo '<p>Delete fail</p>';
+                    }
+                }
                 
+                      
                  ?>
                 <button type="button" class="btn btn-success" onclick="window.location.href='SupplierDetails.php'">Display suppliers' information</button>
     
-                <button type="button" class="btn btn-default" onclick="window.location.href='addSuppliers.php'">Back to home page</button>
+                <button type="button" class="btn btn-default" onclick="window.location.href='index.php'">Back to home page</button>
                 <?php
                 
             }
