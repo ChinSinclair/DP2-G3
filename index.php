@@ -271,7 +271,7 @@
 						<h3 class="title">About</h3>
 					
                         <div class="more">
-							<a href="about.php" title="Title Link">
+							<a href="aboutUs.php" title="Title Link">
 								About Company <i class="fa fa-angle-double-right"></i>
 							</a>
 						</div>
