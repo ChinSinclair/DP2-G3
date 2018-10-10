@@ -19,9 +19,9 @@
 	<link href="style.css" rel="stylesheet" type="text/css" />
 	<title>Page Title</title>
 </head>
-    
+
     <style>
-        @import url(http://weloveiconfonts.com/api/?family=entypo);
+	  @import url(http://weloveiconfonts.com/api/?family=entypo);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
 @import "//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css";
 @import "https://fonts.googleapis.com/css?family=Roboto:400,500";
@@ -88,7 +88,7 @@
 .box .space {
   height: 30px;
 }
-    
+
     </style>
 <body>
 	<!--CODE HERE-->
@@ -109,13 +109,13 @@
 	<div class="container">
 
 			<div class="col-md-3">
-			<div class="box">							
+			<div class="box">
 				<div class="box-icon">
 					<div class="image"><i><img src="img/inventory.png" width="50dp"></i></div>
-			             <div class="info">
+					 <div class="info">
 						<h3 class="title">Inventory</h3>
-					
-                        <div class="more">
+
+				<div class="more">
 							<a href="displayinventory.php" title="Title Link">
 								Display <i class="fa fa-angle-double-right"></i>
 							</a>
@@ -125,7 +125,7 @@
 								Add <i class="fa fa-angle-double-right"></i>
 							</a>
 						</div>
-                        <div class="more">
+				<div class="more">
 							<a href="editinventory.php" title="Title Link">
 								Edit <i class="fa fa-angle-double-right"></i>
 							</a>
@@ -133,17 +133,17 @@
 					</div>
 				</div>
 				<div class="space"></div>
-			</div> 
+			</div>
 		</div>
-        
-        <div class="col-md-3">
-			<div class="box">							
+
+	  <div class="col-md-3">
+			<div class="box">
 				<div class="box-icon">
 					<div class="image"><i><img src="img/sales.png" width="50dp"></i></div>
 					<div class="info">
 						<h3 class="title">Sales</h3>
-					
-                        <div class="more">
+
+				<div class="more">
 							<a href="displaySales.php" title="Title Link">
 								Display <i class="fa fa-angle-double-right"></i>
 							</a>
@@ -153,25 +153,25 @@
 								Add <i class="fa fa-angle-double-right"></i>
 							</a>
 						</div>
-                        <div class="more">
-							<a href="editinventory.php" title="Title Link">
+				<div class="more">
+							<a href="editSalesForm.php" title="Title Link">
 								Edit <i class="fa fa-angle-double-right"></i>
 							</a>
 						</div>
 					</div>
 				</div>
 				<div class="space"></div>
-			</div> 
+			</div>
 		</div>
-        
-        <div class="col-md-3">
-			<div class="box">							
+
+	  <div class="col-md-3">
+			<div class="box">
 				<div class="box-icon">
 					<div class="image"><i><img src="img/supplier.png" width="50dp"></i></div>
 					<div class="info">
 						<h3 class="title">Supplier</h3>
-					
-                        <div class="more">
+
+				<div class="more">
 							<a href="SupplierDetails.php" title="Title Link">
 								Display <i class="fa fa-angle-double-right"></i>
 							</a>
@@ -181,7 +181,7 @@
 								Add <i class="fa fa-angle-double-right"></i>
 							</a>
 						</div>
-                        <div class="more">
+				<div class="more">
 							<a href="EditSuppliers.php" title="Title Link">
 								Edit <i class="fa fa-angle-double-right"></i>
 							</a>
@@ -189,100 +189,100 @@
 					</div>
 				</div>
 				<div class="space"></div>
-			</div> 
+			</div>
 		</div>
-        
-        <div class="col-md-3">
-			<div class="box">							
+
+	  <div class="col-md-3">
+			<div class="box">
 				<div class="box-icon">
 					<div class="image"><i><img src="img/chart.png" width="50dp"></i></div>
 					<div class="info">
 						<h3 class="title">Others</h3>
-					
-                        <div class="more">
+
+				<div class="more">
 							<a href="monthlysalesUI.php" title="Title Link">
 								Monthly Sales <i class="fa fa-angle-double-right"></i>
 							</a>
 						</div>
-                        <div class="more">
+				<div class="more">
 							<a href="techsupport.php" title="Title Link">
 								Tech Support <i class="fa fa-angle-double-right"></i>
 							</a>
 						</div>
-                        <div class="more">
+				<div class="more">
 							<a href="SuppliersPriceDifferenceForm.php" title="Title Link">
 								Supplier Price Difference <i class="fa fa-angle-double-right"></i>
 							</a>
 						</div>
-						
+
 					</div>
 				</div>
 				<div class="space"></div>
-			</div> 
+			</div>
 		</div>
-        
-        <div class="col-md-3">
-			<div class="box">							
+
+	  <div class="col-md-3">
+			<div class="box">
 				<div class="box-icon">
 					<div class="image"><i><img src="img/predict.png" width="50dp"></i></div>
 					<div class="info">
 						<h3 class="title">Predict sales</h3>
-					
-                        <div class="more">
+
+				<div class="more">
 							<a href="PredictSingle1.php" title="Title Link">
 								Items on monthly basis <i class="fa fa-angle-double-right"></i>
 							</a>
 						</div>
-                        <div class="more">
+				<div class="more">
 							<a href="PredictGroup1.php" title="Title Link">
 								Group of similar items on monthly basis <i class="fa fa-angle-double-right"></i>
 							</a>
-                        </div>
+				</div>
 					</div>
 				</div>
 				<div class="space"></div>
-			</div> 
+			</div>
 		</div>
-        
-        <div class="col-md-3">
-			<div class="box">							
+
+	  <div class="col-md-3">
+			<div class="box">
 				<div class="box-icon">
 					<div class="image"><i><img src="img/alert.png" width="50dp"></i></div>
 					<div class="info">
 						<h3 class="title">Alert</h3>
-					
-                        <div class="more">
+
+				<div class="more">
 							<a href="ProductAlert.php" title="Title Link">
 								Product Alert Information <i class="fa fa-angle-double-right"></i>
 							</a>
 						</div>
-						
+
 					</div>
 				</div>
 				<div class="space"></div>
-			</div> 
+			</div>
 		</div>
-        
-        <div class="col-md-3">
-			<div class="box">							
+
+	  <div class="col-md-3">
+			<div class="box">
 				<div class="box-icon">
 					<div class="image"><i><img src="img/about.png" width="50dp"></i></div>
 					<div class="info">
 						<h3 class="title">About</h3>
-					
-                        <div class="more">
+
+				<div class="more">
 							<a href="aboutUs.php" title="Title Link">
 								About Company <i class="fa fa-angle-double-right"></i>
 							</a>
 						</div>
-						
+
 					</div>
 				</div>
 				<div class="space"></div>
-			</div> 
+			</div>
 		</div>
-        
-        
+
+
 
 	</div>
 

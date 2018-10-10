@@ -24,21 +24,21 @@ $SoldStatus = 0;
 
 $x = 0;
 while($x < $Quantity ){
-    $ItemID = uniqid (mt_rand(100000, 999999), true);
-    $sqlInventory = "INSERT INTO Inventory (item_id,category_id,cost,retail_price,exp_date,supplier_id,sold_status) VALUES ('$ItemID','$CategoryID','$Cost','$RetailPrice','$ExpiryDate','$SupplierID','$SoldStatus')";
+
+    $sqlInventory = "INSERT INTO Inventory (category_id,cost,retail_price,exp_date,supplier_id,sold_status) VALUES ('$CategoryID','$Cost','$RetailPrice','$ExpiryDate','$SupplierID','$SoldStatus')";
 
 
     if(!mysqli_query($con,$sqlInventory))
     {
-        $sOutput = "<p>Inventory Not Inserted!</p>";
-        echo $sOutput;
+	  $sOutput = "<p>Inventory Not Inserted!</p>";
+	  echo $sOutput;
     }
     else
     {
-        $sOutput = "<p>Inventory Inserted!</p>";
-        echo $sOutput;
+	  $sOutput = "<p>Inventory Inserted!</p>";
+	  echo $sOutput;
     }
-    
+
     $x ++;
 }
 
